@@ -38,7 +38,9 @@ textarea {
   justify-content: center;
 }
 
-.add-button {
+.add-button,
+.cancel-button,
+.save-button {
   padding: 20px 50px;
   border-radius: 5px;
   border: 2px solid black;
@@ -48,7 +50,9 @@ textarea {
   cursor: pointer;
 }
 
-.add-button:hover {
+.add-button:hover,
+.cancel-button:hover,
+.save-button:hover {
   border-width: 10px;
   box-shadow: 3px 3px 3px black;
 }
@@ -76,4 +80,30 @@ textarea {
   color: white;
   padding: 10px;
   border-radius: 10px;
+}
+
+.buttons-container {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancel-button,
+.save-button {
+  margin: 0 10%;
+}
+
+.cancel-button:active {
+  background-color: red;
+  color: white;
+  border: 5px solid black;
+  margin-top: 5px;
+}
+
+.save-button:active {
+  background-color: green;
+  color: white;
+  border: 5px solid black;
+  margin-top: 5px;
 }
