@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Current To Dos</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/current-todo.css">
+    <link rel="stylesheet" href="styles/header.css"> 
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left-section">
+        To Do List
+      </div>
+
+      <div class="header-middle-section"></div>
+
+      <div class="header-right-section">
+        <button class="current-todo-button js-current-todo">
+          <div class="icon-container">
+            <div class="list-icon-container">
+              <img src="icons/list.svg" class="button-icon">
+            </div>
+
+            <div class="list-icon-tooltip">
+              Current To Dos
+            </div>
+          </div>
+        </button>
+
+        <button class="previous-todo-button js-previous-todo">
+          <div class="icon-container">
+            <div class="history-icon-container">
+              <img src="icons/history.svg" class="button-icon">
+            </div>
+
+            <div class="history-icon-tooltip">
+              Previous To Dos
+            </div>
+          </div>
+        </button>
+
+        <button class="add-todo-button js-add-todo">
+          <div class="icon-container">
+            <div class="add-icon-container">
+              <img src="icons/add.svg" class="button-icon">
+            </div>
+
+            <div class="add-icon-tooltip">
+              Add To Do
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="title">
+      Current To Dos
+    </div>
+
+    <div class="todo-list js-todo-list"></div>
+
+    <script type="module" src="scripts/current-todos.js"></script>
+  </body>
+</html>

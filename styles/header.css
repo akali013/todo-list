@@ -1,0 +1,88 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: black;
+  border-bottom: 5px solid rgb(95, 95, 95);
+  display: flex;
+  align-items: center;
+}
+
+.header-left-section {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 10px;
+  width: 200px;
+}
+
+.header-middle-section {
+  flex: 1;
+}
+
+.header-right-section {
+  width: 250px;
+}
+
+.current-todo-button,
+.previous-todo-button,
+.add-todo-button {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 30px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  position: relative;
+}
+
+.current-todo-button:hover,
+.previous-todo-button:hover,
+.add-todo-button:hover {
+  background-color: rgb(65, 65, 65);
+}
+
+.current-todo-button:active,
+.previous-todo-button:active,
+.add-todo-button:active {
+  background-color: white;
+}
+
+.list-icon-container,
+.history-icon-container,
+.add-icon-container {
+  width: 40px;
+}
+
+.button-icon {
+  width: 100%;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-icon-tooltip,
+.history-icon-tooltip,
+.add-icon-tooltip {
+  position: absolute;
+  bottom: -15px;
+  background-color: white;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 10px;
+  text-wrap: nowrap;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.current-todo-button:hover .list-icon-tooltip,
+.previous-todo-button:hover .history-icon-tooltip,
+.add-todo-button:hover .add-icon-tooltip {
+  opacity: 1;
+}

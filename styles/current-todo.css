@@ -1,0 +1,41 @@
+.title {
+  font-weight: bold;
+  font-size: 76px;
+}
+
+.todo-list {
+  padding: 10px;
+}
+
+.todo-container {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 3px solid black;
+}
+
+.todo {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.todo-date-time, .todo-note {
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.todo-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-button, .delete-button {
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 0 15px;
+}

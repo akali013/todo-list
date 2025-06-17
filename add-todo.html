@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a To Do</title>
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css"> 
+    <link rel="stylesheet" href="styles/add-todo.css">
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left-section">
+        To Do List
+      </div>
+
+      <div class="header-middle-section"></div>
+
+      <div class="header-right-section">
+        <button class="current-todo-button js-current-todo">
+          <div class="icon-container">
+            <div class="list-icon-container">
+              <img src="icons/list.svg" class="button-icon">
+            </div>
+
+            <div class="list-icon-tooltip">
+              Current To Dos
+            </div>
+          </div>
+        </button>
+
+        <button class="previous-todo-button js-previous-todo">
+          <div class="icon-container">
+            <div class="history-icon-container">
+              <img src="icons/history.svg" class="button-icon">
+            </div>
+
+            <div class="history-icon-tooltip">
+              Previous To Dos
+            </div>
+          </div>
+        </button>
+
+        <button class="add-todo-button js-add-todo">
+          <div class="icon-container">
+            <div class="add-icon-container">
+              <img src="icons/add.svg" class="button-icon">
+            </div>
+
+            <div class="add-icon-tooltip">
+              Add To Do
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="error-container js-error-message"></div>  
+
+    <div class="container">
+      <div class="fields-container">
+        <div class="title-input-container">
+          Title
+          <input type="text" class="title-input js-title-input">
+        </div>
+
+        <div class="note-input-container">
+          Note
+          <textarea class="note-input js-note-input"></textarea>
+        </div>
+
+        <div class="date-input-container">
+          Date
+          <input type="date" class="date-input js-date-input">
+        </div>
+
+        <div class="time-input-container">
+          Time
+          <input type="time" class="time-input js-time-input">
+        </div>
+      </div>
+    </div>
+
+    <div class="add-button-container">
+      <button class="add-button js-add-button">
+        Add
+      </button>
+
+      <div class="added-message js-added-message"></div>
+    </div>
+
+    <script type="module" src="scripts/add-todo.js"></script>
+  </body>
+</html>

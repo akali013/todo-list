@@ -1,0 +1,79 @@
+input {
+  display: block;
+  padding: 20px;
+  font-size: 24px;
+}
+
+textarea {
+  display: block;
+  padding: 10px 10px 15px 30px;
+  font-size: 24px;
+}
+
+.container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fields-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+}
+
+.title-input-container,
+.note-input-container,
+.date-input-container,
+.time-input-container {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.add-button-container {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button {
+  padding: 20px 50px;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 24px;
+  background-color: transparent;
+  transition: border-width 0.15s;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  border-width: 10px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.add-button:active {
+  background-color: black;
+  color: white;
+  border: none;
+  margin-top: 10px;
+}
+
+.added-message {
+  margin-left: 30px;
+  color: green;
+}
+
+.error-container {
+  position: fixed;
+  top: 10%;
+  left: 40%;
+}
+
+.error {
+  background-color: rgb(255, 94, 94);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
