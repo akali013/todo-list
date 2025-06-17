@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/header.css"> 
-    <link rel="stylesheet" href="styles/add-todo.css">
+    <link rel="stylesheet" href="styles/modify-todo.css">
 
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,38 +62,10 @@
 
     <div class="error-container js-error-message"></div>  
 
-    <div class="container">
-      <div class="fields-container">
-        <div class="title-input-container">
-          Title
-          <input type="text" class="title-input js-title-input">
-        </div>
+    <div class="container js-container"></div>
 
-        <div class="note-input-container">
-          Note
-          <textarea class="note-input js-note-input"></textarea>
-        </div>
+    <div class="buttons-container js-buttons-container"></div>
 
-        <div class="date-input-container">
-          Date
-          <input type="date" class="date-input js-date-input">
-        </div>
-
-        <div class="time-input-container">
-          Time
-          <input type="time" class="time-input js-time-input">
-        </div>
-      </div>
-    </div>
-
-    <div class="add-button-container">
-      <button class="add-button js-add-button">
-        Add
-      </button>
-
-      <div class="added-message js-added-message"></div>
-    </div>
-
-    <script type="module" src="scripts/add-todo.js"></script>
+    <script type="module" src="scripts/modify-todo.js"></script>
   </body>
 </html>
