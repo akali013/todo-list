@@ -32,7 +32,7 @@
   align-items: center;
 }
 
-.edit-button, .delete-button {
+.edit-button, .delete-button, .check-button {
   padding: 10px;
   border-radius: 30px;
   border: none;

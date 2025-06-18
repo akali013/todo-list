@@ -16,15 +16,15 @@ url.searchParams.get("mode") === "add" ? loadAddPage() : loadEditPage();
 // Load button functionality in the header
 function loadHeader() {
   document.querySelector(".js-current-todo").addEventListener("click", () => {
-    window.location.href = "current-todos.html";
+    window.location.href = "todos-page.html?mode=current";
   });
 
   document.querySelector(".js-previous-todo").addEventListener("click", () => {
-    window.location.href = "previous-todos.html";
+    window.location.href = "todos-page.html?mode=previous";
   });
 
   document.querySelector(".js-add-todo").addEventListener("click", () => {
-    window.location.href = "add-todo.html";
+    window.location.href = "modify-todo.html?mode=add";
   });
 }
 
@@ -63,6 +63,7 @@ function initializeBasePage() {
 
 // Load the add page, which is just the add button
 function loadAddPage() {
+  document.querySelector(".js-title").innerHTML = "Add To Do";
   document.querySelector(".js-buttons-container").innerHTML = `
     <div class="add-button-container">
       <button class="add-button js-add-button">
@@ -108,6 +109,7 @@ function validateFields() {
 // Loads the edit page with prefilled values and
 // the cancel and save buttons
 function loadEditPage() {
+  document.querySelector(".js-title").innerHTML = "Edit To Do";
   document.querySelector(".js-buttons-container").innerHTML = `
     <button class="cancel-button js-cancel-button">
       Cancel
@@ -119,7 +121,7 @@ function loadEditPage() {
   `;
 
   const todoId = url.searchParams.get("id");
-  let todo = getToDo(todoId);
+  let todo = getToDo(todoId, currentTodos);
 
   // Prefill form values
   titleInput.value = todo.title;
@@ -133,7 +135,7 @@ function loadEditPage() {
 // Load cancel and save buttons
 function loadEditButtons(todo) {
   document.querySelector(".js-cancel-button").addEventListener("click", () => {
-    window.location.href = "current-todos.html";
+    window.location.href = "todos-page.html?mode=current";
   });
 
   document.querySelector(".js-save-button").addEventListener("click", () => {
@@ -144,7 +146,7 @@ function loadEditButtons(todo) {
       todo.note = noteInput.value;
 
       saveCurrentToDos();
-      window.location.href = "current-todos.html";
+      window.location.href = "todos-page.html?mode=current";
     }
     else {
       showErrorPopUp();

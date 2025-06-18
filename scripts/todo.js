@@ -16,9 +16,14 @@ export class Todo {
 
 // Contains Todo objects
 export let currentTodos = JSON.parse(localStorage.getItem("current-todos")) || [];
+export let previousTodos = JSON.parse(localStorage.getItem("previous-todos")) || [];
 
 export function saveCurrentToDos() {
   localStorage.setItem("current-todos", JSON.stringify(currentTodos));
+}
+
+export function savePreviousToDos() {
+  localStorage.setItem("previous-todos", JSON.stringify(previousTodos));
 }
 
 // Let each to do be represented by a 10 digit number
@@ -32,9 +37,9 @@ function generateToDoID() {
 }
 
 // Returns a to do with a matching ID
-export function getToDo(id) {
+export function getToDo(id, todoList) {
   let matchingToDo;
-  currentTodos.forEach((todo) => {
+  todoList.forEach((todo) => {
     if (todo.id === id) {
       matchingToDo = todo;
     }
@@ -43,13 +48,14 @@ export function getToDo(id) {
   return matchingToDo;
 }
 
-// Deletes a to do from currentTodos with the given id
-export function deleteToDo(id) {
-  for (let i = 0; i < currentTodos.length; i++) {
-    if (currentTodos[i].id === id) {
-      currentTodos.splice(i, 1);
+// Deletes a to do from currentTodos or previousTodos with the given id
+export function deleteToDo(todoList, id, saveFunc) {
+  for (let i = 0; i < todoList.length; i++) {
+    if (todoList[i].id === id) {
+      todoList.splice(i, 1);
       break;
     }
   }
-  saveCurrentToDos();
+  
+  saveFunc();
 }
