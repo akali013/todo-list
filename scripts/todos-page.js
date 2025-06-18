@@ -1,9 +1,14 @@
-import { Todo, currentTodos, deleteToDo, getToDo, previousTodos, saveCurrentToDos, savePreviousToDos } from "./todo.js";
+import { currentTodos, deleteToDo, getToDo, previousTodos, saveCurrentToDos, savePreviousToDos } from "./todo.js";
+
+const {animate} = anime;
 
 loadHeader();
 // If the mode URL parameter is "current", load current todos
 const url = new URL(window.location.href);
 url.searchParams.get("mode") === "current" ? loadCurrentToDos() : loadPreviousToDos();
+animateTitle();
+animateToDos();
+animateButtons();
 
 // For each Todo object in currentTodos, list their information
 // with edit and delete buttons
@@ -113,5 +118,64 @@ function loadHeader() {
 
   document.querySelector(".js-add-todo").addEventListener("click", () => {
     window.location.href = "modify-todo.html?mode=add";
+  });
+}
+
+// Animates each todo box
+function animateToDos() {
+  document.querySelectorAll(".todo-container").forEach((todo) => {
+    animate(todo, {
+      x: {
+        from: "-200%",
+        duration: 700,
+        ease: "out(10)"
+      }
+    });
+  });
+}
+
+function animateTitle() {
+  animate(".js-title", {
+    opacity: {
+      from: 0,
+      ease: "inOutCubic",
+      duration: 400
+    }
+  });
+}
+
+// Animate buttons to have a bounce animation
+// when hovered over and clicked
+function animateButtons() {
+  document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("mouseover", () => {
+      animate(button, {
+        scale: {
+          to: 1.25,
+          duration: 100,
+          ease: "out"
+        }
+      });
+    });
+
+    button.addEventListener("mouseleave", () => {
+      animate(button, {
+        scale: {
+          to: 1,
+          duration: 300,
+          ease: "out"
+        }
+      });
+    });
+
+    button.addEventListener("click", () => {
+      animate(button, {
+        scale: {
+          to: 0.75,
+          duration: 50,
+          ease: "out"
+        }
+      });
+    });
   });
 }
